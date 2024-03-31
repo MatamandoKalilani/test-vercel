@@ -5,7 +5,7 @@ const LocatePage = async ({}: LocatePageProps) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  await delay(20000);
+  await delay(5000);
 
   const region = process.env.NOW_REGION || "Region not available";
   return (
