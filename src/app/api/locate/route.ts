@@ -1,0 +1,7 @@
+import { NextResponse } from "next/server";
+
+export async function GET() {
+  const region = process.env.NOW_REGION || "Region not available";
+
+  return NextResponse.json({ region }, { status: 200 });
+}
