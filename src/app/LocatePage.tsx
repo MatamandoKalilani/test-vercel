@@ -1,14 +1,13 @@
 interface LocatePageProps {}
 
 const LocatePage = async ({}: LocatePageProps) => {
-  const waitFunc = new Promise<string>((resolve) => {
-    setTimeout(() => {
-      const region = process.env.NOW_REGION || "Region not available";
-      resolve(region);
-    }, 10000); // Simulate a delay
-  });
+  function delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-  const region = await waitFunc;
+  await delay(20000);
+
+  const region = process.env.NOW_REGION || "Region not available";
   return (
     <div>
       <p>{region}</p>
