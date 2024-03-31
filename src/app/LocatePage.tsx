@@ -1,7 +1,5 @@
 interface LocatePageProps {}
 
-export const dynamic = "force-dynamic";
-
 const LocatePage = async ({}: LocatePageProps) => {
   function delay(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
