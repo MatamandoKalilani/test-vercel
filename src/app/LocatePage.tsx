@@ -5,7 +5,7 @@ const LocatePage = async ({}: LocatePageProps) => {
     setTimeout(() => {
       const region = process.env.NOW_REGION || "Region not available";
       resolve(region);
-    }, 1000); // Simulate a delay
+    }, 10000); // Simulate a delay
   });
 
   const region = await waitFunc;
