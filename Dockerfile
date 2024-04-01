@@ -12,16 +12,17 @@ FROM base AS package-filled-alpine
 RUN apk add --no-cache libc6-compat
 RUN apk update
 
+
 # Create Installer Stage
 FROM package-filled-alpine AS instaler
-COPY --chown=nextjs:nodejs /package.json .
-COPY --chown=nextjs:nodejs /pnpm-lock.yaml .
+COPY /package.json .
+COPY /pnpm-lock.yaml .
 
 RUN pnpm install -P
 
 # Create Final Runner Stage
 FROM instaler AS runner
-COPY --chown=nextjs:nodejs / .
+COPY / .
 
 # Run Build
 RUN pnpm run build 
