@@ -18,7 +18,7 @@ FROM package-filled-alpine AS instaler
 COPY /package.json .
 COPY /pnpm-lock.yaml .
 
-RUN pnpm install -P
+RUN pnpm install 
 
 # Create Final Runner Stage
 FROM instaler AS runner
